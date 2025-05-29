@@ -40,9 +40,7 @@ const Hero = () => {
                 muted
                 id="current-video"
                 className="size-64 origin-center scale-150 object-cover object-center"
-                onLoadedData={() => {
-                  handleVideoLoad;
-                }}
+                onLoadedData={handleVideoLoad}
               />
             </div>
           </div>
