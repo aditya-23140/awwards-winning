@@ -278,8 +278,7 @@ body::-webkit-scrollbar {
 .three-body__dot:nth-child(2)::after {
   bottom: 0;
   left: 0;
-  animation: wobble1 var(--uib-speed) infinite calc(var(--uib-speed) * -0.15)
-    ease-in-out;
+  animation: wobble1 var(--uib-speed) infinite calc(var(--uib-speed) * -0.15) ease-in-out;
 }
 
 .three-body__dot:nth-child(3) {
@@ -305,6 +304,7 @@ body::-webkit-scrollbar {
 }
 
 @keyframes wobble1 {
+
   0%,
   100% {
     transform: translateY(0%) scale(1);
@@ -318,6 +318,7 @@ body::-webkit-scrollbar {
 }
 
 @keyframes wobble2 {
+
   0%,
   100% {
     transform: translateY(0%) scale(1);
@@ -328,4 +329,27 @@ body::-webkit-scrollbar {
     transform: translateY(66%) scale(0.65);
     opacity: 0.8;
   }
+}
+
+.clip-path-btn {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  display: inline-block;
+  transition: clip-path 0.2s ease-in-out;
+}
+
+.clip-path-btn:hover {
+  clip-path: polygon(2% 0, 98% 2%, 100% 88%, 2% 100%);
+  border-radius: 0.5rem;
+}
+
+.border-btn {
+  border-radius: 999px;
+}
+
+.border-btn:hover {
+  border-radius: 0.5rem 0.5rem 0.6rem 0.5rem;
+}
+
+.border-btn:not(:hover) {
+  transition: border-radius 0.3s ease-out;
 }

@@ -67,8 +67,18 @@ const BentoTilt = ({ children, className = "" }: TiltProps) => {
 };
 
 const BentoCard = ({ src, title, description, isComingSoon }: CardProps) => {
+  const hoverSound = useRef<HTMLAudioElement | null>(null);
+
+  const playHoverSound = () => {
+    if (!hoverSound.current) return;
+    else {
+      hoverSound.current.currentTime = 0;
+      hoverSound.current.play();
+    }
+  };
   return (
-    <div className="relative size-full">
+    <div onMouseEnter={playHoverSound} className="relative size-full">
+      <audio ref={hoverSound} src="audio/bento.wav" preload="auto" />
       <video
         src={src}
         loop
